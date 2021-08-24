@@ -1,7 +1,7 @@
 "use strict";
 /**
  * @license
- * Copyright Google Inc. All Rights Reserved.
+ * Copyright Google LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
@@ -20,7 +20,7 @@ const validCliPaths = new Map([
     ['cli.packageManager', undefined],
     ['cli.analytics', undefined],
     ['cli.analyticsSharing.tracking', undefined],
-    ['cli.analyticsSharing.uuid', v => v ? `${v}` : uuid_1.v4()],
+    ['cli.analyticsSharing.uuid', (v) => (v ? `${v}` : uuid_1.v4())],
 ]);
 /**
  * Splits a JSON path string into fragments. Fragments can be used to get the value referenced
@@ -47,24 +47,29 @@ function parseJsonPath(path) {
             const indices = match[2]
                 .slice(1, -1)
                 .split('][')
-                .map(x => (/^\d$/.test(x) ? +x : x.replace(/\"|\'/g, '')));
+                .map((x) => (/^\d$/.test(x) ? +x : x.replace(/\"|\'/g, '')));
             result.push(...indices);
         }
     }
-    return result.filter(fragment => fragment != null);
+    return result.filter((fragment) => fragment != null);
 }
 function normalizeValue(value) {
+    var _a, _b;
     const valueString = `${value}`.trim();
-    if (valueString === 'true') {
-        return true;
+    switch (valueString) {
+        case 'true':
+            return true;
+        case 'false':
+            return false;
+        case 'null':
+            return null;
+        case 'undefined':
+            return undefined;
     }
-    else if (valueString === 'false') {
-        return false;
-    }
-    else if (isFinite(+valueString)) {
+    if (isFinite(+valueString)) {
         return +valueString;
     }
-    return value || undefined;
+    return (_b = (_a = json_file_1.parseJson(valueString)) !== null && _a !== void 0 ? _a : value) !== null && _b !== void 0 ? _b : undefined;
 }
 class ConfigCommand extends command_1.Command {
     async run(options) {
@@ -82,7 +87,7 @@ class ConfigCommand extends command_1.Command {
             It has been automatically migrated.`);
                 }
             }
-            catch (_a) { }
+            catch { }
         }
         if (options.value == undefined) {
             if (!config) {

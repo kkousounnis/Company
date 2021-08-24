@@ -1,16 +1,15 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeployCommand = void 0;
 /**
  * @license
- * Copyright Google Inc. All Rights Reserved.
+ * Copyright Google LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeployCommand = void 0;
 const architect_command_1 = require("../models/architect-command");
 const BuilderMissing = `
-
 Cannot find "deploy" target for the specified project.
 
 You should add a package that implements deployment capabilities for your
@@ -28,9 +27,6 @@ class DeployCommand extends architect_command_1.ArchitectCommand {
         super(...arguments);
         this.target = 'deploy';
         this.missingTargetError = BuilderMissing;
-    }
-    async run(options) {
-        return this.runArchitectTarget(options);
     }
     async initialize(options) {
         if (!options.help) {
