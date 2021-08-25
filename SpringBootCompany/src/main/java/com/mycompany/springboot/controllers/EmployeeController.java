@@ -20,20 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class EmployeeController {
 
     @Autowired
     private EmployeeServiceImpl employeeServiceImpl;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/employee")
     public List<Employee> get() {
 
         return (new EmployeeResponse(employeeServiceImpl.get()).getEmployees());
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/employee")
     public Employee save(@RequestBody EmployeeRequest employee) {  //to change to EmployeeRequest issue with angular    
         System.out.println(employee.getEmployee());
@@ -41,7 +40,6 @@ public class EmployeeController {
         return (employee.getEmployee());
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/employee/{id}")
     public ResponseEntity<Employee> get(@PathVariable int id) {
         Employee employee = employeeServiceImpl.get(id);
