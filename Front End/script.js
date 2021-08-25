@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: "http://localhost:8081/api/employee/16"
+        url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee/16"
     }).then(function (data) {
         var myInformation = new XMLSerializer().serializeToString(data);
         console.log(new XMLSerializer().serializeToString(data));
