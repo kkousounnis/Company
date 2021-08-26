@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Grocery Store - Spring Boot</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Company</title>
+    <link rel="stylesheet" href="assets/boostrap/css/bootstrap.css">
+    <link rel="shortcut icon" href="#">
 </head>
 
 <body>
-    <div id="content">
-        <div id="content-data">The data from Company:<br />
-            <p id="id">Id: </p>
-            <p id="firstName">First Name: </p>
-            <p id="lastName">Last Name: </p>
-            <p id="email">Email: </p>
-        </div>
+
+    <div class="container">
+
+        <nav class=" navbar navbar-expand-sm bg-primary navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Employee List</a>
+                </li>
+                <li class="nav-item">
+                    <a href="employee-register.html" class="nav-link">Register Employee</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Employee's List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Id</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="table" class="text-center">
+                
+            </tbody>
+        </table>
+
     </div>
+    <footer class="footer">
+        <div class="container">
+            <h6 class="text-center">All Right Reserved 2021 @Java </h6>
+        </div>
+    </footer>
 </body>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/employee-list.js"></script>
 
 </html>
