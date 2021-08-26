@@ -4,6 +4,9 @@
 <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <title>Company</title>
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap.css">
     <link rel="shortcut icon" href="#">
@@ -24,21 +27,21 @@
             </ul>
         </nav>
         <h1>Register Employee</h1>
-        <form>
-            <div class="form-group">
-                <label> First Name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" />
-            </div>
-            <div class="form-group">
-                <label> Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" />
-            </div>
-            <div class="form-group">
-                <label> Email</label>
-                <input type="text" class="form-control" id="emailId" name="emailId" />
-            </div>
-            <button id="register" class="btn btn-primary" type="submit">Submit</button>
-        </form>
+
+        <div class="form-group">
+            <label> First Name</label>            
+            <input type="text" class="form-control" id="firstName" name="firstName" required/>
+            <p id="errorFirstName"></p>
+        </div>
+        <div class="form-group">
+            <label> Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName"/>
+        </div>
+        <div class="form-group">
+            <label> Email</label>
+            <input type="text" class="form-control" id="emailId" name="emailId"/>
+        </div>
+        <button id="form" class="btn btn-primary" type="submit">Submit</button>
 
     </div>
     <footer class="footer">
@@ -48,7 +51,7 @@
     </footer>
 </body>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
-<script src="assets/js/script.js"></script>
+<!-- <script src="assets/js/script.js"></script> -->
 <script src="assets/js/employee-register.js"></script>
 
 </html>

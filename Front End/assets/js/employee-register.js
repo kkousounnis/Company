@@ -1,14 +1,13 @@
-var employee = {
-    "employee": {
-        "firstName": "Liza",
-        "lastName": "Nadal",
-        "emailId": "na@fard.com"
-    }
-};
-
 $(document).ready(function () {
-    $("#register").click(function () {
-        console.log("hdhdh");
+    $("#form").click(function (event) {
+
+        var employee = {
+            "employee": {
+                "firstName": document.getElementById("firstName").value,
+                "lastName": document.getElementById("lastName").value,
+                "emailId": document.getElementById("emailId").value
+            }
+        };
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8081/api/employee',
@@ -22,5 +21,10 @@ $(document).ready(function () {
             }
 
         })
+
+
     });
+
+
 });
+
