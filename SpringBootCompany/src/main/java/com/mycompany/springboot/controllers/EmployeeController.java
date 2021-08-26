@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @PostMapping("/employee")
     public Employee save(@RequestBody EmployeeRequest employee) {  //to change to EmployeeRequest issue with angular    
-        System.out.println(employee.getEmployee());
+        System.out.println(employee.getEmployee()+"Koussos");
         employeeServiceImpl.save(employee.getEmployee());
         return (employee.getEmployee());
     }
@@ -46,7 +46,6 @@ public class EmployeeController {
         return ResponseEntity.ok(employee);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/employee/{id}")
     public ResponseEntity<Map<String, Boolean>> delete(@PathVariable int id) {
         employeeServiceImpl.delete(id);
@@ -55,7 +54,6 @@ public class EmployeeController {
         return ResponseEntity.ok(response);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping("/employee/{id}")
     public ResponseEntity<Employee> update(@PathVariable int id, @RequestBody Employee employeeDetails) {
         Employee employee = employeeServiceImpl.get(id);
