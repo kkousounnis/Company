@@ -18,7 +18,6 @@ $(document).ready(function () {
                 '<div class="btn">' +
                 '<button class="btn btn-info"> View</button>' +
                 '</div>';
-                
         }
     });
 });
