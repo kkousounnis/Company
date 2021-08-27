@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#form").click(function (event) {
+    $(document).delegate('#addNew', 'click', function (event) {
 
         var employee = {
             "employee": {
@@ -8,6 +8,7 @@ $(document).ready(function () {
                 "emailId": document.getElementById("emailId").value
             }
         };
+
         $.ajax({
             type: 'POST',
             // url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee"
@@ -18,10 +19,11 @@ $(document).ready(function () {
 
             success: function (msg) {
                 console.log(msg);
-                alert('In Ajax');
+                window.setTimeout(function () { location.reload() }, 1000)
             }
 
         })
+
 
 
     });
