@@ -10,6 +10,7 @@ $(document).ready(function () {
         console.log(lastName);
 
         console.log(emailId);
+        document.getElementById("id").value = id;
         document.getElementById("firstName").value = firstName;
 
         document.getElementById("lastName").value = lastName;
@@ -37,7 +38,7 @@ $(document).ready(function () {
                 '<button class="btn btn-danger"> Delete</button>' +
                 '</div>' +
                 '<div class="btn">' +
-                '<button class="btn btn-info"> View</button>' +
+                '<button cid="edit" data-toggle="modal" data-target="#modalCenterUpdateEmployee" class="btn btn-info"> View</button>' +
                 '</div>';
         }
     });
