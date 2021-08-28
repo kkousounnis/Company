@@ -8,10 +8,21 @@ $(document).ready(function () {
         
         document.getElementById("id").value = id;
         document.getElementById("firstName").value = firstName;
-
         document.getElementById("lastName").value = lastName;
-
         document.getElementById("emailId").value = emailId;
+        
+    });
+
+    $('table').on('click', 'button[id="view"]', function (e) {
+        // Takes the values from the cells tha i create from javascript
+        var id = $(this).closest('tr').children('td:first').text();
+        var firstName = $(this).closest('tr').children('td:nth-child(2)').text();
+        var lastName = $(this).closest('tr').children('td:nth-child(3)').text();
+        var emailId = $(this).closest('tr').children('td:nth-child(4)').text();
+        
+        document.getElementById("firstName1").value = firstName;
+        document.getElementById("lastName1").value = lastName;
+        document.getElementById("emailId1").value = emailId;
         
     });
 
@@ -34,7 +45,7 @@ $(document).ready(function () {
                 '<button id="delete" class="btn btn-danger"> Delete</button>' +
                 '</div>' +
                 '<div class="btn">' +
-                '<button cid="edit" data-toggle="modal" data-target="#modalCenterUpdateEmployee" class="btn btn-info"> View</button>' +
+                '<button id="view" data-toggle="modal" data-target="#modalCenterViewEmployee" class="btn btn-info">View</button>' +
                 '</div>';
         }
     });

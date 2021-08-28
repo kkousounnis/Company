@@ -16,7 +16,6 @@ $(document).ready(function () {
             data: JSON.stringify(employee),
 
             success: function (msg) {
-                console.log(msg);
                 window.setTimeout(function () { location.reload() }, 1000)
             }
 
