@@ -11,8 +11,8 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee",
-            // url: 'http://localhost:8081/api/employee',
+            // url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee",
+            url: 'http://localhost:8081/api/employee',
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(employee),

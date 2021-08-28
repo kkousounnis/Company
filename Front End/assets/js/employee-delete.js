@@ -5,8 +5,8 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'DELETE',
-            url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee"+ id,
-            // url: 'http://localhost:8081/api/employee/' + id,        
+            // url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee"+ id,
+            url: 'http://localhost:8081/api/employee/' + id,        
     
             success: function (msg) {
                 window.setTimeout(function () { location.reload() }, 1000)
