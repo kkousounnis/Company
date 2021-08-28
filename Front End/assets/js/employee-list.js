@@ -1,15 +1,11 @@
 $(document).ready(function () {
     $('table').on('click', 'button[id="edit"]', function (e) {
+        // Takes the values from the cells tha i create from javascript
         var id = $(this).closest('tr').children('td:first').text();
         var firstName = $(this).closest('tr').children('td:nth-child(2)').text();
         var lastName = $(this).closest('tr').children('td:nth-child(3)').text();
         var emailId = $(this).closest('tr').children('td:nth-child(4)').text();
-        console.log(id);
-        console.log(firstName);
-
-        console.log(lastName);
-
-        console.log(emailId);
+        
         document.getElementById("id").value = id;
         document.getElementById("firstName").value = firstName;
 
@@ -35,7 +31,7 @@ $(document).ready(function () {
                 '<button id="edit" data-toggle="modal" data-target="#modalCenterUpdateEmployee" class="btn btn-info">Update</button>' +
                 '</div>' +
                 '<div class="btn">' +
-                '<button class="btn btn-danger"> Delete</button>' +
+                '<button id="delete" class="btn btn-danger"> Delete</button>' +
                 '</div>' +
                 '<div class="btn">' +
                 '<button cid="edit" data-toggle="modal" data-target="#modalCenterUpdateEmployee" class="btn btn-info"> View</button>' +
