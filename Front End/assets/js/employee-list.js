@@ -27,8 +27,8 @@ $(document).ready(function () {
     });
 
     $.ajax({
-        // url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee"
-        url: 'http://localhost:8081/api/employee',
+        url: "http://ra1.anystream.eu:1090/KKSpringBootCompany/api/employee"
+        // url: 'http://localhost:8081/api/employee',
     }).then(function (data) {
         var table = document.getElementById("table");
         for (var element of data) {
