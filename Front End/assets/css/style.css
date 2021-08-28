@@ -1,0 +1,13 @@
+#cell{
+    visibility: hidden;
+}
+
+#appear{
+    position:relative;
+    display: none;
+}
+
+#id{
+    position:relative;
+    display: none;
+}
